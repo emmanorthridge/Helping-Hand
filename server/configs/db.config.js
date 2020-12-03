@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost/mern-server", {
+  .connect("mongodb://localhost/helping-hand", {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -9,7 +9,7 @@ mongoose
   })
   .then((x) => {
     console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+      `✅✅✅ Connected to Mongo! Database name: "${x.connections[0].name}"`
     );
   })
   .catch((err) => {
