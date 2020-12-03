@@ -27,8 +27,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const index = require('./routes/index');
-app.use('/', index);
+//Routes middleware
+app.use("/api", require("./routes/index"));
+app.use("/api", require("./routes/project.route"));
+
+//Cors middleware
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
