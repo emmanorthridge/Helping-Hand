@@ -2,7 +2,7 @@ const { Router } = require("express");
 const router = Router();
 const mongoose = require("mongoose");
 
-const Project = require("../models/project.model");
+const Project = require("../models/post.model");
 
 router.post("/projects", (req, res) => {
     const { title, description } = req.body;

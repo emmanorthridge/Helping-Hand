@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Routes middleware
 app.use("/api", require("./routes/index"));
-app.use("/api", require("./routes/project.route"));
+app.use("/api", require("./routes/post.route"));
 
 //Cors middleware
 app.use(
