@@ -2,15 +2,14 @@ const { Router } = require("express");
 const router = Router();
 const mongoose = require("mongoose");
 
-const Project = require("../models/post.model");
+const Post = require("../models/post.model");
+// const User = require ("../models/user.model");
 
-router.post("/projects", (req, res) => {
-    const { title, description } = req.body;
+router.post("/posts", (req, res) => {
+    const { text } = req.body;
   
-    Project.create({
-      title,
-      description,
-      tasks: [],
+    Post.create({
+      text,
     })
       .then((response) => {
         res.status(200).json(response);
