@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import 'bulma/css/bulma.css';
+
 
 const PostList = () => {
     const [listOfPosts, setListOfPosts] = useState([]);
@@ -20,7 +22,7 @@ const PostList = () => {
 
     return (
         <div>
-          <div style={{ width: "60%", float: "left" }}>
+          <div>
             <h2>Posts from the Backend</h2>
             {listOfPosts.map((post) => {
               return (
@@ -30,6 +32,7 @@ const PostList = () => {
               );
             })}
           </div>
+              <button class="button **is-large is-success is-rounded**">Click here</button>
         </div>
       );
     };
