@@ -27,10 +27,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Routes middleware
-app.use("/api", require("./routes/index"));
-app.use("/api", require("./routes/post.route"));
-
 //Cors middleware
 app.use(
   cors({
@@ -38,6 +34,12 @@ app.use(
     credentials: true,
   })
 );
+
+//Routes middleware
+app.use("/api", require("./routes/index"));
+app.use("/api", require("./routes/post.route"));
+
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

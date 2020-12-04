@@ -19,4 +19,14 @@ router.post("/posts", (req, res) => {
       });
   });
 
+  router.get("/posts", (req, res) => {
+    Post.find()
+    .then((allThePosts) => {
+      res.status(200).json(allThePosts);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
   module.exports = router;
