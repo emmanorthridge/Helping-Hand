@@ -7,8 +7,14 @@ const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const cors = require("cors");
+const passport = require("passport");
+const session = require("express-session");
 
 require("./configs/db.config");
+
+
+// Passport configuration
+require("./configs/passport.config");
 
 const app = express();
 
@@ -35,10 +41,23 @@ app.use(
   })
 );
 
+// Session middleware
+app.use(
+  session({
+    secret: process.env.SESS_SECRET,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
 //Routes middleware
 app.use("/api", require("./routes/index"));
-app.use("/api", require("./routes/post.route"));
-
+app.use("/api", require("./routes/post.routes"));
+app.use("/api", require("./routes/auth.routes"));
 
 
 // catch 404 and forward to error handler
