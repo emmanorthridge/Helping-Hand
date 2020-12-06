@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import AuthService from "../../services/auth.service";
+
 const Navbar = (props) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
-  // const service = new AuthService();
+  const service = new AuthService();
 
   // Mimic lifecycle method when a component updates
   useEffect(() => {
     setLoggedInUser(props.userInSession);
   }, [props.userInSession]);
 
-  //    // function to log user out
-  // const logoutUser = () => {
-  //   service.logout().then(() => {
-  //     // reset state value
-  //     setLoggedInUser(null);
-  //     props.getUser(null);
-  //   });
-  // };
+     // function to log user out
+  const logoutUser = () => {
+    service.logout().then(() => {
+      // reset state value
+      setLoggedInUser(null);
+      props.getUser(null);
+    });
+  };
 
   if (loggedInUser) {
     return (
@@ -55,7 +57,7 @@ const Navbar = (props) => {
           </li>
           <li>
             <Link to='/'>
-              <button>Logout</button>
+            <button onClick={logoutUser}>Logout</button>
             </Link>
           </li>
         </ul>

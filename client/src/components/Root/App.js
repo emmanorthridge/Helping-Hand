@@ -38,7 +38,7 @@ function App() {
   return loggedInUser ? (
     <section className='App'>
        <Router>
-      <Navbar userInSession={loggedInUser}/>
+      <Navbar userInSession={loggedInUser} getUser={getLoggedInUser} />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/posts' component={PostList} />
@@ -49,7 +49,7 @@ function App() {
   ) : (
       <section className='App'>
         <Router>
-         <Navbar userInSession={loggedInUser}/>
+        <Navbar userInSession={loggedInUser} getUser={getLoggedInUser} />
          <Switch>
         <Route exact path='/signup' render={() => <Signup getUser={getLoggedInUser} />}
           />
