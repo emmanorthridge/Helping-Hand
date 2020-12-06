@@ -24,18 +24,18 @@ const Navbar = () => {
             <ul>
               <li>
                 <Link
-                  className='button is-danger'
+                  className='button is-info is-outlined'
                   to='/signup'
                   style={{ textDecoration: 'none' }}
                 >
                   <strong>Sign up</strong>
                 </Link>
                 <Link
-                  className='button is-green'
+                  className='button is-info is-outlined'
                   to='/login'
                   style={{ textDecoration: 'none' }}
                 >
-                  Login
+                  <strong>Login</strong>
                 </Link>
               </li>
             </ul>

@@ -2,9 +2,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// import 'bulma/css/bulma.css';
-
-
 const PostList = () => {
     const [listOfPosts, setListOfPosts] = useState([]);
 
@@ -32,7 +29,7 @@ const PostList = () => {
               );
             })}
           </div>
-              <button class="button **is-large is-success is-rounded**">Click here</button>
+              <button className="button **is-large is-success is-rounded**">Click here</button>
         </div>
       );
     };

@@ -39,7 +39,7 @@ const Home = () => {
                         <strong>Sign up</strong>
                       </Link>{' '}
                       today to share your posts for help or find people who need
-                      your assistance
+                      your assistance.
                     </p>
                   </div>
                 </div>

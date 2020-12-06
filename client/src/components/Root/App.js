@@ -2,9 +2,12 @@ import './App.css';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import Signup from "../Auth/Signup";
+
 import PostList from '../Posts/PostList';
 import Home from '../Home/Home';
 import Navbar from '../Navbar/Navbar'
+import About from '../Home/About'
 
 function App() {
   return (
@@ -13,7 +16,10 @@ function App() {
       <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/signup' component={Signup} />
+
           <Route exact path='/posts' component={PostList} />
+          <Route exact path='/about' component={About} />
         </Switch>
       </Router>
       <footer class='footer'>
