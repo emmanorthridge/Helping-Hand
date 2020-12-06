@@ -6,7 +6,7 @@ const initialState = { username: "", password: "" };
 
 const Signup = (props) => {
   const [regForm, setRegForm] = useState(initialState);
-  const [regErrorMsg, setRegErrorMsg] = useState("");
+  // const [regErrorMsg, setRegErrorMsg] = useState("");
 
   const service = new AuthService();
 
@@ -22,12 +22,12 @@ const Signup = (props) => {
       .then((response) => {
         setRegForm(initialState);
         console.log("SIGN UP RESPONSE", response);
-        props.getUser(response);
+        // props.getUser(response);
       })
       .catch((error) => {
         console.log(error);
-        const { message } = error.response.data;
-        setRegErrorMsg(message);
+        // const { message } = error.response.data;
+        // setRegErrorMsg(message);
       });
   };
 
@@ -68,7 +68,7 @@ const Signup = (props) => {
       </form>
       <br />
 
-      {regErrorMsg && <span style={{ color: "red" }}>{regErrorMsg}</span>}
+      {/* {regErrorMsg && <span style={{ color: "red" }}>{regErrorMsg}</span>} */}
 
       <p>
         Already have account?
