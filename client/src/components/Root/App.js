@@ -33,30 +33,35 @@ function App() {
     setLoggedInUser(userObject);
   };
   
-
-  return (
-    <div className='App'>
-      <Router>
+  fetchUser();
+  
+  return loggedInUser ? (
+    <section className='App'>
+       <Router>
       <Navbar userInSession={loggedInUser}/>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/signup' render={() => <Signup getUser={getLoggedInUser} />}
-          />
-
           <Route exact path='/posts' component={PostList} />
           <Route exact path='/about' component={About} />
         </Switch>
-      </Router>
-      <footer class='footer'>
-        <div class='content has-text-centered'>
-          <p>
-            <strong>Built by</strong> {' '}
-            <a href='https://www.linkedin.com/in/emma-northridge/'>Emma Northridge</a> for the third Ironhack project
-          </p>
-        </div>
-      </footer>
-    </div>
+        </Router>
+        </section>
+  ) : (
+      <section className='App'>
+        <Router>
+         <Navbar userInSession={loggedInUser}/>
+         <Switch>
+        <Route exact path='/signup' render={() => <Signup getUser={getLoggedInUser} />}
+          />
+           <Route exact path='/' component={Home} />
+           <Route exact path='/about' component={About} />
+           </Switch>
+           </Router>
+           </section>
+  
   );
 }
+
+
 
 export default App;
