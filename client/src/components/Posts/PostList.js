@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import 'bulma/css/bulma.css';
+// import 'bulma/css/bulma.css';
 
 
 const PostList = () => {

@@ -38,6 +38,38 @@
   }
 }
 
-#homepage {
-  background-color: blue !important;
+.buttons {
+  padding-right: 90px;
+}
+
+.title {
+  padding-bottom: 30px;
+}
+
+.main-title {
+  font-size: 2.5em;
+}
+
+.quote {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.logo {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.about {
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+.second-title {
+  padding-top: 30px;
+  font-size: 25px;
+}
+
+.second-quote {
+  padding-top: 15px;
 }
