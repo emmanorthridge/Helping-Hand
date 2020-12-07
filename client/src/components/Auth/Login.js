@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import AuthService from "../../services/auth.service";
 
@@ -22,6 +22,7 @@ const Login = (props) => {
       .then((response) => {
         setLoginState(initialState);
         props.getUser(response);
+        props.history.push('/profile')
       })
       .catch((error) => {
         const { message } = error.response.data;
@@ -69,4 +70,6 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default withRouter (Login);
+
+

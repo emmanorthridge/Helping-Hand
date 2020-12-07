@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import AuthService from "../../services/auth.service";
 
 const initialState = { username: "", password: "" };
@@ -23,6 +23,7 @@ const Signup = (props) => {
         setRegForm(initialState);
         props.getUser(response);
         console.log("SIGN UP RESPONSE", response);
+        props.history.push('/profile')
       })
       .catch((error) => {
         // console.log(error.response);
@@ -78,4 +79,5 @@ const Signup = (props) => {
   );
 };
 
-export default Signup;
+export default withRouter (Signup);
+
