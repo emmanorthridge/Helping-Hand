@@ -12,6 +12,7 @@ import PostList from '../Posts/PostList';
 import Home from '../Home/Home';
 import Navbar from '../Navbar/Navbar';
 import About from '../Home/About';
+import Profile from '../Home/Profile';
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -48,6 +49,11 @@ function App() {
             path='/posts'
             component={PostList}
           />
+          <ProtectedRoute
+            user={loggedInUser}
+            path='/profile'
+            component={Profile}
+          />
           <Route exact path='/about' component={About} />
         </Switch>
       </Router>
@@ -73,6 +79,11 @@ function App() {
             user={loggedInUser}
             path='/posts'
             component={PostList}
+          />
+          <ProtectedRoute
+            user={loggedInUser}
+            path='/profile'
+            component={Profile}
           />
         </Switch>
       </Router>

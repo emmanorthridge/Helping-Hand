@@ -56,6 +56,15 @@ const Navbar = (props) => {
                 </div> */}
           </li>
           <li>
+          <Link
+              className='button is-info is-outlined'
+              to='/profile'
+              style={{ textDecoration: 'none' }}
+            >
+              <strong>Profile Page</strong>
+            </Link>
+            </li>
+          <li>
             <Link to='/'>
             <button onClick={logoutUser}>Logout</button>
             </Link>
@@ -70,7 +79,7 @@ const Navbar = (props) => {
           <ul>
             <li>
               <Link
-                className='button is-info is-outlined'
+                className='button is-danger is-outlined'
                 to='/signup'
                 style={{ textDecoration: 'none' }}
               >
