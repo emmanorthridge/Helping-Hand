@@ -23,7 +23,6 @@ const Signup = (props) => {
         setRegForm(initialState);
         props.getUser(response);
         console.log("SIGN UP RESPONSE", response);
-        props.history.push('/profile')
       })
       .catch((error) => {
         // console.log(error.response);
@@ -80,4 +79,3 @@ const Signup = (props) => {
 };
 
 export default withRouter (Signup);
-

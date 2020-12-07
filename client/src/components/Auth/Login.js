@@ -14,15 +14,17 @@ const Login = (props) => {
   // Function to handle form submit in the input fields
   const handleFormSubmit = (event) => {
     event.preventDefault();
-
+console.log(loginState);
     const { username, password } = loginState;
 
     service
       .login(username, password)
       .then((response) => {
         setLoginState(initialState);
+        console.log(response);
         props.getUser(response);
-        props.history.push('/profile')
+        props.history.push(`/profile/${response._id}`)
+
       })
       .catch((error) => {
         const { message } = error.response.data;
@@ -71,5 +73,3 @@ const Login = (props) => {
 };
 
 export default withRouter (Login);
-
-

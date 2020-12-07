@@ -59,6 +59,7 @@ app.use("/api", require("./routes/index"));
 app.use("/api", require("./routes/post.routes"));
 app.use("/api", require("./routes/auth.routes"));
 app.use("/api", require("./routes/fileUpload.routes"));
+app.use("/api", require("./routes/profile.routes"));
 
 
 // catch 404 and forward to error handler
