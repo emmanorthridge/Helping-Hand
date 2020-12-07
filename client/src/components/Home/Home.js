@@ -10,7 +10,7 @@ const Home = () => {
             <div className='title'>
               <h1 className='main-title'>Helping Hand</h1>
               <div className='second-title'>
-                <h2>Become a Hero in your local neighbourhood today</h2>
+                <h2>Become a local Hero in your neighbourhood today</h2>
               </div>
             </div>
             <div class='columns is-vcentered'>
