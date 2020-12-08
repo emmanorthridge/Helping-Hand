@@ -58,10 +58,11 @@ const Navbar = (props) => {
           <li>
           <Link
               className='button is-info is-outlined'
-              to='/profile'
+              to={`/profile/${loggedInUser._id}`}
+             
               style={{ textDecoration: 'none' }}
             >
-              <strong>Profile Page</strong>
+              <strong>My Profile Page</strong>
             </Link>
             </li>
           <li>
