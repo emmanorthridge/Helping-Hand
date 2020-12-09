@@ -40,7 +40,6 @@ const EditProfile = (props) => {
   };
 
   const handleFileUpload = (event) => {
-    // console.log("The file to be uploaded is", event.target.files[0]);
     const uploadData = new FormData();
     uploadData.append("imageUrl", event.target.files[0]);
 
@@ -49,13 +48,9 @@ const EditProfile = (props) => {
       .upload(uploadData)
       .then((response) => {
         console.log("response is", response);
-        // console.log(detailsToUpdate);
-        // setProfileDetails(...profileDetails, {imageUrl: response.})
         setDetailsToUpdate({ ...detailsToUpdate, imageUrl: response.cloudinaryUrl });
         console.log({ ...detailsToUpdate, imageUrl: response.cloudinaryUrl });
-        // console.log(detailsToUpdate);
         props.getUser({ ...detailsToUpdate, imageUrl: response.cloudinaryUrl });
-        // console.log(detailsToUpdate);
       })
       .catch((err) => {
         console.log("Error while uploading the file: ", err);

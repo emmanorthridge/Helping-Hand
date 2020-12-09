@@ -74,20 +74,16 @@ const PostList = (props) => {
 
   useEffect(getAllPosts, []);
 
- 
   const deletePost = (event) => {
     event.preventDefault();
-    console.log('delete', event.target);
-    const { id } = props.match.params;
-    console.log(props.match.params)
+    const { name } = event.target;
 
     const service = new PostService();
 
-
     service
-      .removePost(id)
+      .removePost(name)
       .then(() => {
-        props.history.push('/posts');
+        getAllPosts();
       })
       .catch((error) => console.error(error));
   };
@@ -159,12 +155,15 @@ const PostList = (props) => {
                   <button onClick={handleCommentFormSubmit}>
                     Submit Comment
                   </button>
-                  </Link>
-                  <Link to="/posts">
-                  <button onClick={deletePost(post._id)}>
-                    Delete post
-                  </button>
                 </Link>
+
+                {post.userId === props.loggedInUser._id && (
+                  <Link to='/posts'>
+                    <button name={post._id} onClick={deletePost}>
+                      Delete post
+                    </button>
+                  </Link>
+                )}
               </div>
             </div>
           );

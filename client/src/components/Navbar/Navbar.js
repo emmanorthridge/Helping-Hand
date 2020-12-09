@@ -8,15 +8,12 @@ const Navbar = (props) => {
 
   const service = new AuthService();
 
-  // Mimic lifecycle method when a component updates
   useEffect(() => {
     setLoggedInUser(props.userInSession);
   }, [props.userInSession]);
 
-     // function to log user out
   const logoutUser = () => {
     service.logout().then(() => {
-      // reset state value
       setLoggedInUser(null);
       props.getUser(null);
     });

@@ -10,13 +10,11 @@ const Signup = (props) => {
 
   const service = new AuthService();
 
-  // Form submission handler
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
     const { username, password, email } = regForm;
 
-    // Use the service.signup method to make a call to the back end and sign the user up
     service
       .signup(username, password, email)
       .then((response) => {
@@ -27,13 +25,12 @@ const Signup = (props) => {
 
       })
       .catch((error) => {
-        // console.log(error.response);
         const { message } = error.response.data;
         setRegErrorMsg(message);
       });
   };
 
-  // Change handler
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setRegForm({ ...regForm, [name]: value });

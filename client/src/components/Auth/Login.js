@@ -11,7 +11,7 @@ const Login = (props) => {
 
   const service = new AuthService();
 
-  // Function to handle form submit in the input fields
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
 console.log(loginState);
@@ -33,7 +33,7 @@ console.log(loginState);
       });
   };
 
-  // Function to handle changes in the input fields
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
     setLoginState({ ...loginState, [name]: value });
