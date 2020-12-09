@@ -10,7 +10,7 @@ class AuthService {
   }
 
   // Method to use in our SignUp component
-  signup = (username, password, email) => {
+  signup = (username, password, email,) => {
     return this.service
       .post("/signup", { username, password, email })
       .then((response) => response.data);

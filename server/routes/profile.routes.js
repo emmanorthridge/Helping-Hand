@@ -14,16 +14,16 @@ router.put('/profile/:id', (req, res) => {
         return
     }
 
-    User.findByIdAndUpdate(id, detailsToUpdate)
-        .then(() => {
-            res.status(200).json({
-                message: `User with ${id} is updated successfully.`,
-            })
+    User.findByIdAndUpdate(id, detailsToUpdate, {new: true})
+        .then((response) => {
+            res.status(200).json(response)
         })
         .catch((error) => {
             res.status(500).json(error)
         })
-})
+    })
+    
+
 
 router.get('/profile/:id', (req, res) => {
     const { id } = req.params

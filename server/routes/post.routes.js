@@ -3,10 +3,12 @@ const router = Router()
 const mongoose = require('mongoose')
 
 const Post = require('../models/post.model')
-// const User = require ("../models/user.model");
+const User = require ("../models/user.model");
 
-router.post('/posts', (req, res) => {
-    const { text, userId, username, type } = req.body
+router.post('/posts', async function (req, res) {
+    const { text, userId, username } = req.body
+
+    const { type } = await User.findOne({ _id: userId })
 
     Post.create({
         text,

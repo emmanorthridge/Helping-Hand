@@ -17,17 +17,7 @@ const PostSchema = new Schema({
     type: {
         type: String,
     },
-    avatar: {
-        type: String,
-    },
-    likes: [
-        {
-            user: {
-                type: Schema.Types.ObjectId,
-                ref: 'User',
-            },
-        },
-    ],
+
     comments: [
         {
             user: {
@@ -41,9 +31,7 @@ const PostSchema = new Schema({
                 type: String,
                 required: true,
             },
-            avatar: {
-                type: String,
-            },
+           
             date: {
                 type: Date,
                 default: Date.now,
