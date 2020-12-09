@@ -63,7 +63,7 @@ function App() {
                     <Route exact path="/about" component={About} />
                     <ProtectedRoute user={loggedInUser} path="/posts" component={PostList} />
                     <ProtectedRoute user={loggedInUser} path="/profile/:id" component={Profile} />
-                    {/* <ProtectedRoute user={loggedInUser} path="/edit-profile/:id" component={EditProfile} /> */}
+                    <ProtectedRoute user={loggedInUser} path="/edit-profile/:id" component={EditProfile} />
                 </Switch>
             </Router>
         </section>

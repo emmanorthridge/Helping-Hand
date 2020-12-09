@@ -23,6 +23,8 @@ const Signup = (props) => {
         setRegForm(initialState);
         props.getUser(response);
         console.log("SIGN UP RESPONSE", response);
+        props.history.push(`/profile/${response._id}`)
+
       })
       .catch((error) => {
         // console.log(error.response);

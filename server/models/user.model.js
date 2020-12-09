@@ -8,7 +8,7 @@ const userSchema = new Schema(
     firstName: String,
     lastName: String,
     type: String,
-    imageURL: String,
+    imageUrl: String,
     description: String,
     location: String
   },

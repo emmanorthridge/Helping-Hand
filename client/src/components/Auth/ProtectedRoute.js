@@ -8,7 +8,7 @@ import { Route, Redirect } from "react-router-dom";
     - Because we want to be able to pass down user's who are loggedIn to the components that need that information. 
     - Also, we want to redirect any user who isn't logged in to the login page 
 */
-const ProtectedRoute = ({ component: Component, user, ...rest }) => {
+const ProtectedRoute = ({ component: Component, user, getUser, ...rest }) => {
   return (
     <Route
       {...rest}
@@ -16,7 +16,7 @@ const ProtectedRoute = ({ component: Component, user, ...rest }) => {
         // Check if there is some user logged in already
         // Return the component associated to the url if successful or redirect if not
         if (user) {
-          return <Component {...props} loggedInUser={user} />;
+          return <Component {...props} loggedInUser={user} getUser={getUser} />;
         } else {
           return (
             <Redirect to={{ pathname: "/", state: { from: props.location } }} />
@@ -26,5 +26,4 @@ const ProtectedRoute = ({ component: Component, user, ...rest }) => {
     />
   );
 };
-
 export default ProtectedRoute;

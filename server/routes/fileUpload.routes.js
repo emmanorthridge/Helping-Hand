@@ -3,7 +3,7 @@ const router = Router();
 
 const fileUploader = require("../configs/cloudinary.config");
 
-router.post("/upload", fileUploader.single("imageURL"), (req, res, next) => {
+router.post("/upload", fileUploader.single("imageUrl"), (req, res, next) => {
     res.status(200).json({ cloudinaryUrl: req.file.path });
 });
 

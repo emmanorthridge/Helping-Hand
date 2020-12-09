@@ -6,9 +6,9 @@ const Post = require('../models/post.model')
 const User = require ("../models/user.model");
 
 router.post('/posts', async function (req, res) {
-    const { text, userId, username } = req.body
+    const { text, userId, username, type } = req.body
 
-    const { type } = await User.findOne({ _id: userId })
+    // const { type } = await User.findOne({ _id: userId })
 
     Post.create({
         text,
@@ -41,7 +41,6 @@ router.put('/posts', async function (req, res) {
         return
     }
 
-    // it would be better to write this using a promise (.then.catch), since that's what is everywhere else in the code, but idk if it's a big deal
     const post = await Post.find({ _id: id })
 
     const commentsToSave = post[0].comments || []
