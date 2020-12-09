@@ -74,6 +74,19 @@
   padding-top: 40px;
 }
 
-.homepage {
-  color: blue;
+
+.need-help-post {
+  margin-left: 350px;
+  color: red;
+  border-style: double;
+  width: 50%;
+
 }
+
+.volunteer-post {
+  margin-left: 350px;
+  color: green;
+  border-style: double;
+  width: 50%;
+}
+

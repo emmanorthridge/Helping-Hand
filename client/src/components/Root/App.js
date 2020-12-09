@@ -10,10 +10,10 @@ import ProtectedRoute from '../Auth/ProtectedRoute'
 
 import PostList from '../Posts/PostList'
 import Home from '../Home/Home'
-import EditProfile from '../Home/EditProfile'
+import EditProfile from '../Profile/EditProfile'
 import Navbar from '../Navbar/Navbar'
 import About from '../Home/About'
-import Profile from '../Home/Profile'
+import Profile from '../Profile/Profile'
 
 function App() {
     const [loggedInUser, setLoggedInUser] = useState(null)
@@ -45,10 +45,10 @@ function App() {
                 <Navbar userInSession={loggedInUser} getUser={getLoggedInUser} />
                 <Switch>
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/about" component={About} />
                     <ProtectedRoute user={loggedInUser} path="/posts" component={PostList} />
                     <ProtectedRoute user={loggedInUser} path="/profile/:id" component={Profile} />
                     <ProtectedRoute user={loggedInUser} path="/edit-profile/:id" getUser={getLoggedInUser} component={EditProfile} />
-                    <Route exact path="/about" component={About} />
                 </Switch>
             </Router>
         </section>

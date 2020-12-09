@@ -60,4 +60,23 @@ router.put('/posts', async function (req, res) {
         })
 })
 
+router.delete("/posts/:id", (req, res) => {
+    const { id } = req.params;
+  
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      res.status(400).json({ message: "Specified id is not valid" });
+      return;
+    }
+  
+    Post.findByIdAndRemove(id)
+      .then(() => {
+        res.status(200).json({
+          message: `Post with ${id} is removed successfully.`,
+        });
+      })
+      .catch((error) => {
+        res.status(500).json(error);
+      });
+  });
+
 module.exports = router

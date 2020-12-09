@@ -2,14 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import PostService from '../../services/post.service';
+
 const PostList = (props) => {
   const [listOfPosts, setListOfPosts] = useState([]);
   const [postToSave, setPostToSave] = useState({});
   const [commentToSave, setCommentToSave] = useState({});
 
   const getAllPosts = () => {
-    axios
-      .get(`http://localhost:5000/api/posts`)
+    const service = new PostService();
+
+    service
+      .getPosts()
       .then((responseFromApi) => {
         setListOfPosts(responseFromApi.data);
         setCommentToSave({});
@@ -18,10 +22,11 @@ const PostList = (props) => {
   };
 
   const handlePostFormSubmit = (event) => {
+    const service = new PostService();
     event.preventDefault();
     const { text } = postToSave;
-    axios
-      .post(`http://localhost:5000/api/posts`, {
+    service
+      .createPost({
         text: text,
         userId: props.loggedInUser._id,
         username: props.loggedInUser.username,
@@ -69,6 +74,24 @@ const PostList = (props) => {
 
   useEffect(getAllPosts, []);
 
+ 
+  const deletePost = (event) => {
+    event.preventDefault();
+    console.log('delete', event.target);
+    const { id } = props.match.params;
+    console.log(props.match.params)
+
+    const service = new PostService();
+
+
+    service
+      .removePost(id)
+      .then(() => {
+        props.history.push('/posts');
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div>
       <h2>POST FEED</h2>
@@ -91,8 +114,8 @@ const PostList = (props) => {
               <div
                 className={
                   post.type === 'volunteer'
-                    ? 'class for volunteer'
-                    : 'class for helper'
+                    ? 'volunteer-post'
+                    : 'need-help-post'
                 }
               >
                 <p>
@@ -135,6 +158,11 @@ const PostList = (props) => {
                 <Link to='/'>
                   <button onClick={handleCommentFormSubmit}>
                     Submit Comment
+                  </button>
+                  </Link>
+                  <Link to="/posts">
+                  <button onClick={deletePost(post._id)}>
+                    Delete post
                   </button>
                 </Link>
               </div>

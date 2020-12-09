@@ -25,9 +25,11 @@ const Navbar = (props) => {
   if (loggedInUser) {
     return (
       <nav className='navbar' role='navigation' aria-label='main navigation'>
-        {/* <div className='navbar-start'>
+        <div className='navbar-start'>
         <div className='logo'>
+        <Link to="/">
           <img src='/superman.png' alt='alternative' width={50} height={20} />
+          </Link>
         </div>
         <div className='about'>
           <Link
@@ -38,12 +40,12 @@ const Navbar = (props) => {
             <strong>About</strong>
           </Link>
         </div>
-      </div> */}
-        <ul>
-          <li>
-            {/* <div className='navbar-end'>
+      </div>
+         {/* <div className='navbar-end'>
         <div className='buttons'>
           <div className='nav-bar item'> */}
+        <ul>
+          <li>
             <Link
               className='button is-info is-outlined'
               to='/posts'
@@ -75,7 +77,20 @@ const Navbar = (props) => {
     );
   } else {
     return (
-      <div>
+      
+      <div className='navbar-start'>
+        <div className='logo'>
+          <img src='/superman.png' alt='alternative' width={50} height={20} />
+        </div>
+        <div className='about'>
+          <Link
+            className='button is-primary'
+            to='/about'
+            style={{ textDecoration: 'none' }}
+          >
+            <strong>About</strong>
+          </Link>
+        </div>
         <nav>
           <ul>
             <li>
