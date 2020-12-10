@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css'
 
 import AuthService from "../../services/auth.service";
 
@@ -21,16 +22,17 @@ const Navbar = (props) => {
 
   if (loggedInUser) {
     return (
-      <nav className='navbar' role='navigation' aria-label='main navigation'>
+      <nav className='navbar is-primary' role='navigation' aria-label='main navigation'>
+        <div className = "nav">
         <div className='navbar-start'>
         <div className='logo'>
         <Link to="/">
-          <img src='/superman3.png' alt='alternative' width={50} height={20} />
+          <img src='/superman.png' alt='alternative' width={50} height={20} />
           </Link>
         </div>
         <div className='about'>
           <Link
-            className='button is-info is-outlined'
+            className='button is-white is-outlined'
             to='/about'
             style={{ textDecoration: 'none' }}
           >
@@ -38,19 +40,20 @@ const Navbar = (props) => {
           </Link>
         </div>
       </div>
+      </div>
 
       <div className='navbar-end'>
         <div className='buttons'>
           
         <Link
-              className='button is-info is-outlined'
+              className='button is-white is-outlined'
               to='/posts'
               style={{ textDecoration: 'none' }}
             >
               <strong>Posts</strong>
             </Link>
             <Link
-              className='button is-info is-outlined'
+              className='button is-white is-outlined'
               to={`/profile/${loggedInUser._id}`}
              
               style={{ textDecoration: 'none' }}
@@ -58,56 +61,53 @@ const Navbar = (props) => {
               <strong>My Profile Page</strong>
             </Link>
 
-            <Link  className='button is-info is-outlined' to='/'>
+            <Link  className='button is-white is-outlined' to='/'>
             <strong onClick={logoutUser}>Logout
             </strong>
             </Link>
         </div>
       </div>
-
-        
-            
-         
       </nav>
     );
   } else {
     return (
+      <nav className='navbar is-primary' role='navigation' aria-label='main navigation'>
       <div className='navbar-start'>
-        <div className='logo'>
-          <img src='/superman.png' alt='alternative' width={50} height={20} />
-        </div>
-        <div className='about'>
-          <Link
-            className='button is-primary'
-            to='/about'
-            style={{ textDecoration: 'none' }}
-          >
-            <strong>About</strong>
-          </Link>
-        </div>
-        <nav>
-          <ul>
-            <li>
+      <div className='logo'>
+      <Link to="/">
+        <img src='/superman.png' alt='alternative' width={50} height={20} />
+        </Link>
+        
+      </div>
+      <div className='about'>
+        <Link
+          className='button is-white is-outlined'
+          to='/about'
+          style={{ textDecoration: 'none' }}
+        >
+          <strong>About</strong>
+        </Link>
+      </div>
+    </div>
+         <div className='navbar-end'>
+        <div className='buttons'>
               <Link
-                className='button is-danger is-outlined'
+                className='button is-white  is-outlined'
                 to='/signup'
                 style={{ textDecoration: 'none' }}
               >
                 <strong>Sign up</strong>
               </Link>
-            </li>
-            <li>
               <Link
-                className='button is-info is-outlined'
+                className='button is-white  is-outlined'
                 to='/login'
                 style={{ textDecoration: 'none' }}
               >
-                <strong>Login</strong>
+                <strong>Log in</strong>
               </Link>
-            </li>
-          </ul>
+          </div>
+        </div>
         </nav>
-      </div>
     );
   }
 };

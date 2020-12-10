@@ -37,35 +37,45 @@ const Signup = (props) => {
   };
 
   return (
-    <div>
-      <h2>Sign up</h2>
+    <div className='field'>
+      <img src='/hand2.png' alt='alternative' width={300} height={300} />
+      
+      <div className = 'signup-form'>
+        
+      <h2><strong>Sign up</strong></h2>
+    
+      <div className='form'>
       <form onSubmit={handleFormSubmit}>
-      <label>Email:</label>
+      <label className='label' >Email:</label>
         <input
+          className='input is-primary'
           type="text"
           name="email"
           value={regForm.email}
           onChange={handleChange}
         />
-        <label>Username:</label>
+        <label className='label'>Username:</label>
         <input
+          className='input is-primary'
           type="text"
           name="username"
           value={regForm.username}
           onChange={handleChange}
         />
 
-        <label>Password:</label>
+        <label className='label'>Password:</label>
         <input
+          className='input is-primary'
           type="password"
           name="password"
           value={regForm.password}
           onChange={handleChange}
         />
 
-        <input type="submit" value="Signup" />
+        <input className= 'sign-button' type="submit" value="Signup" />
       </form>
       <br />
+      </div>
 
       {regErrorMsg && <span style={{ color: "red" }}>{regErrorMsg}</span>}
 
@@ -74,6 +84,7 @@ const Signup = (props) => {
         <Link to={"/"}> Login</Link>
       </p>
     </div>
+     </div>
   );
 };
 

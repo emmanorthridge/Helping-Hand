@@ -42,10 +42,6 @@
   padding-right: 90px;
 }
 
-.title {
-  padding-bottom: 30px;
-}
-
 .main-title {
   font-size: 2.5em;
 }
@@ -61,13 +57,13 @@
 }
 
 .second-title {
-  padding-top: 30px;
+  padding-top: 10px;
   font-size: 25px;
 }
 
 .quote {
   padding-top: 10px;
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .second-quote {
@@ -88,5 +84,42 @@
   color: green;
   border-style: double;
   width: 50%;
+}
+
+.homepage-title {
+  padding-bottom: 50px;
+}
+
+.about-title {
+ padding-bottom: 30px;
+}
+
+.form {
+   
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+.field h2 {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 2em;
+}
+
+.sign-button {
+  margin-top: 15px;
+}
+
+.field {
+  padding-top: 150px;
+}
+
+.signup-form {
+
+  background-color: #13D1B2;
+ 
 }
 

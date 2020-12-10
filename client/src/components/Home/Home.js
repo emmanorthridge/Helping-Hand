@@ -4,24 +4,33 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className='homepage'>
-      <section className='hero is-primary is-fullheight '>
+      
+      <section className='hero is-white is-fullheight '>
         <div className='hero-body container'>
           <div className='container'>
+            <div className = "homepage-title">
             <div className='title'>
-              <h1 className='main-title'>Helping Hand</h1>
+              <img
+                  src='/hand2.png'
+                  alt='alternative'
+                  width={750}
+                  height={750}
+                />
               <div className='second-title'>
                 <h2>Become a local Hero in your neighbourhood today</h2>
               </div>
             </div>
+            </div>
             <div class='columns is-vcentered'>
               <div class='column is-7'>
                 <img
-                  src='/superman3.png'
+                  src='/superman.png'
                   alt='alternative'
-                  width={500}
-                  height={500}
+                  width={350}
+                  height={30}
                 />
               </div>
+
 
               <div class='column is-3'>
                 <div className='quote'>
