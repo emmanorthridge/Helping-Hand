@@ -25,12 +25,12 @@ const Navbar = (props) => {
         <div className='navbar-start'>
         <div className='logo'>
         <Link to="/">
-          <img src='/superman.png' alt='alternative' width={50} height={20} />
+          <img src='/superman3.png' alt='alternative' width={50} height={20} />
           </Link>
         </div>
         <div className='about'>
           <Link
-            className='button is-primary'
+            className='button is-info is-outlined'
             to='/about'
             style={{ textDecoration: 'none' }}
           >
@@ -38,24 +38,18 @@ const Navbar = (props) => {
           </Link>
         </div>
       </div>
-         {/* <div className='navbar-end'>
+
+      <div className='navbar-end'>
         <div className='buttons'>
-          <div className='nav-bar item'> */}
-        <ul>
-          <li>
-            <Link
+          
+        <Link
               className='button is-info is-outlined'
               to='/posts'
               style={{ textDecoration: 'none' }}
             >
               <strong>Posts</strong>
             </Link>
-            {/* <div>
-                </div>
-                </div> */}
-          </li>
-          <li>
-          <Link
+            <Link
               className='button is-info is-outlined'
               to={`/profile/${loggedInUser._id}`}
              
@@ -63,18 +57,21 @@ const Navbar = (props) => {
             >
               <strong>My Profile Page</strong>
             </Link>
-            </li>
-          <li>
-            <Link to='/'>
-            <button onClick={logoutUser}>Logout</button>
+
+            <Link  className='button is-info is-outlined' to='/'>
+            <strong onClick={logoutUser}>Logout
+            </strong>
             </Link>
-          </li>
-        </ul>
+        </div>
+      </div>
+
+        
+            
+         
       </nav>
     );
   } else {
     return (
-      
       <div className='navbar-start'>
         <div className='logo'>
           <img src='/superman.png' alt='alternative' width={50} height={20} />

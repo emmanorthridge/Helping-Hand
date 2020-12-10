@@ -16,7 +16,7 @@ const Home = () => {
             <div class='columns is-vcentered'>
               <div class='column is-7'>
                 <img
-                  src='/superman.png'
+                  src='/superman3.png'
                   alt='alternative'
                   width={500}
                   height={500}
