@@ -50,7 +50,11 @@ const EditProfile = (props) => {
           ...detailsToUpdate,
           imageUrl: response.cloudinaryUrl,
         });
+<<<<<<< HEAD
         console.log({ ...detailsToUpdate, imageUrl: response.cloudinaryUrl });
+=======
+        console.log('this is the image uploading', { ...detailsToUpdate, imageUrl: response.cloudinaryUrl });
+>>>>>>> 25e1bf642f1e5b8a8eda4cd59d01f49562d0fd42
         props.getUser({ ...detailsToUpdate, imageUrl: response.cloudinaryUrl });
       })
       .catch((err) => {
