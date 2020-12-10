@@ -27,9 +27,10 @@ console.log(loginState);
 
       })
       .catch((error) => {
-        const { message } = error.response.data;
-        setLoginErrorMsg(message);
+        // const { message } = error.response.data;
         console.log(error);
+        setLoginErrorMsg(message);
+   
       });
   };
 
