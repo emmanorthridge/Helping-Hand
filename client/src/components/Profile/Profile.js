@@ -20,7 +20,8 @@ const Profile = (props) => {
         <div>
             <div>
                 <div>Username: {profileDetails.username}</div>
-                <img src={profileDetails.imageUrl} alt="profile" />
+                <img  width={250}
+                  height={250} src={profileDetails.imageUrl} alt="profile" />
                 <div>Email: {profileDetails.email}</div>
                 <div>Location: {profileDetails.location}</div>
                 <div>Description: {profileDetails.description}</div>

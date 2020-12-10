@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -41,19 +40,21 @@ const EditProfile = (props) => {
 
   const handleFileUpload = (event) => {
     const uploadData = new FormData();
-    uploadData.append("imageUrl", event.target.files[0]);
+    uploadData.append('imageUrl', event.target.files[0]);
 
-   
     service
       .upload(uploadData)
       .then((response) => {
-        console.log("response is", response);
-        setDetailsToUpdate({ ...detailsToUpdate, imageUrl: response.cloudinaryUrl });
+        console.log('response is', response);
+        setDetailsToUpdate({
+          ...detailsToUpdate,
+          imageUrl: response.cloudinaryUrl,
+        });
         console.log({ ...detailsToUpdate, imageUrl: response.cloudinaryUrl });
         props.getUser({ ...detailsToUpdate, imageUrl: response.cloudinaryUrl });
       })
       .catch((err) => {
-        console.log("Error while uploading the file: ", err);
+        console.log('Error while uploading the file: ', err);
       });
   };
 
@@ -65,7 +66,6 @@ const EditProfile = (props) => {
         <div>Username: {profileDetails.username}</div>
         <div>Email: {profileDetails.email}</div>
       </div>
-
       <form onSubmit={handleFormSubmit}>
         <label htmlFor='imageUrl'>Upload profile picture:</label>
         <input type='file' name='imageUrl' onChange={handleFileUpload} />
@@ -100,10 +100,15 @@ const EditProfile = (props) => {
           </option>
         </select>
       </form>
-
-      <Link to='/'>
-        <button onClick={handleFormSubmit}>Update Profile</button>
-      </Link>
+      {detailsToUpdate.imageUrl ? (
+        <Link to='/'>
+          <button onClick={handleFormSubmit}>Submit</button>
+        </Link>
+      ) : (
+        <button disabled type='submit'>
+          Submit
+        </button>
+      )}
     </div>
   );
 };
