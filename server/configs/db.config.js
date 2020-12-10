@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost/helping-hand", {
+  .connect(process.env.MONGO_ATLAS_URI || MONGO_LOCAL, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -15,3 +15,4 @@ mongoose
   .catch((err) => {
     console.error("Error connecting to mongo", err);
   });
+
