@@ -21,12 +21,8 @@ class PostService {
   };
 
   removePost = (id) => {
-    return this.service
-      .delete(`/posts/${id}`)
-      .then((response) => response);
+    return this.service.delete(`/posts/${id}`).then((response) => response);
   };
-
 }
-
 
 export default PostService;
