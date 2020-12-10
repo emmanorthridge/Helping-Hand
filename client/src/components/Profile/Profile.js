@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+
+
+import ProfileService from '../../services/profile.service';
 
 const Profile = (props) => {
     const loggedInUserId = props.loggedInUser._id
     const [profileDetails, setProfileDetails] = useState([])
     const getProfile = () => {
-        axios
-            .get(`http://localhost:5000/api/profile/${props.match.params.id}`)
+        const service = new ProfileService();
+        service
+            .getServiceProfile(props.match.params.id)
             .then((responseFromApi) => {
                 setProfileDetails(responseFromApi.data)
             })

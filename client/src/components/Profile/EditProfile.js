@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import UploadService from '../../services/upload.service';
+import ProfileService from '../../services/profile.service';
 
 const EditProfile = (props) => {
   const { _id } = props.loggedInUser;
   const [profileDetails, setProfileDetails] = useState({});
   const [detailsToUpdate, setDetailsToUpdate] = useState({});
   const getProfile = () => {
-    axios
-      .get(`http://localhost:5000/api/profile/${_id}`)
+    const service = new ProfileService();
+    service
+      .getServiceProfile(_id)
       .then((responseFromApi) => {
         setProfileDetails(responseFromApi.data);
         setDetailsToUpdate(responseFromApi.data);
@@ -21,6 +23,7 @@ const EditProfile = (props) => {
   const service = new UploadService();
 
   const handleFormSubmit = (event) => {
+    
     event.preventDefault();
 
     axios

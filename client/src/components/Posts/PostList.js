@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+
 
 import PostService from '../../services/post.service';
 
@@ -41,11 +41,12 @@ const PostList = (props) => {
   };
 
   const handleCommentFormSubmit = (event) => {
+    const service = new PostService();
     event.preventDefault();
     const { postId, comment } = commentToSave;
 
-    axios
-      .put(`http://localhost:5000/api/posts`, {
+    service
+      .updatePost({
         id: postId,
         comments: {
           text: comment,

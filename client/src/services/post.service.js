@@ -16,8 +16,8 @@ class PostService {
     return this.service.post('/posts', data).then((response) => response);
   };
 
-  updatePost = () => {
-    return this.service.put(`/posts`).then((response) => response);
+  updatePost = (data) => {
+    return this.service.put(`/posts`, data).then((response) => response);
   };
 
   removePost = (id) => {
