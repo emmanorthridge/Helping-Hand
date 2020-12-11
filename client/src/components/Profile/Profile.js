@@ -33,11 +33,17 @@ const Profile = (props) => {
           </div>
           <div className='profile-info'>
             <div class='column is-8'>
-              <div className='profile'><strong>Username:</strong> {profileDetails.username}</div>
-              <div className='profile'><strong>Location:</strong> {profileDetails.location}</div>
-              <div><strong>Description:</strong> {profileDetails.description}</div>
-              <div className='profile'><strong>
-                I am:{' '}</strong>
+              <div className='profile'>
+                <strong>Username:</strong> {profileDetails.username}
+              </div>
+              <div className='profile'>
+                <strong>Location:</strong> {profileDetails.location}
+              </div>
+              <div>
+                <strong>Description:</strong> {profileDetails.description}
+              </div>
+              <div className='profile'>
+                <strong>I am: </strong>
                 {profileDetails.type === 'non-volunteer'
                   ? 'Looking For Help'
                   : 'A Volunteer'}
@@ -46,16 +52,15 @@ const Profile = (props) => {
           </div>
         </div>
       </div>
-      <div className = 'profileupdate'>
-
-      {props.match.params.id === loggedInUserId && (
-        <Link
-          className='button is-primary'
-          to={`/edit-profile/${props.match.params.id}`}
-        >
-          Click here to update profile
-        </Link>
-      )}
+      <div className='profileupdate'>
+        {props.match.params.id === loggedInUserId && (
+          <Link
+            className='button is-primary'
+            to={`/edit-profile/${props.match.params.id}`}
+          >
+            Click here to update profile
+          </Link>
+        )}
       </div>
     </div>
   );

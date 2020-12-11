@@ -124,12 +124,10 @@ const PostList = (props) => {
                       : 'need-help-post'
                   }
                 >
-                   <div className='post-text'>
+                  <div className='post-text'>
                     <h3>
                       <strong>Type:</strong>{' '}
-                      {post.type === 'volunteer'
-                        ? 'Volunteer'
-                        : 'Help needed'}
+                      {post.type === 'volunteer' ? 'Volunteer' : 'Help needed'}
                     </h3>
                   </div>
                   <div className='post-text'>
@@ -148,13 +146,11 @@ const PostList = (props) => {
                     </h3>
                   </div>
 
-                
-
                   <div className='post-text'>
                     <h3>
                       <strong>Added:</strong> {post.date}
                     </h3>
-                    
+
                     {post.comments.map((comment) => {
                       return (
                         <div>
@@ -182,32 +178,30 @@ const PostList = (props) => {
                   </div>
 
                   <div className='comment-buttons'>
-                    <div className = 'submit-comment'>
-                    <Link to='/'>
-                      <button
-                        className='button is-primary is-inverted'
-                        onClick={handleCommentFormSubmit}
-                      >
-                        Submit Comment
-                      </button>
-                    </Link>
-                    </div>
-
-                    <div className = 'delete-post'>
-
-                    {post.userId === props.loggedInUser._id && (
-                      <Link to='/posts'>
+                    <div className='submit-comment'>
+                      <Link to='/'>
                         <button
-                          className='button is-danger is-inverted'
-                          name={post._id}
-                          onClick={deletePost}
+                          className='button is-primary is-inverted'
+                          onClick={handleCommentFormSubmit}
                         >
-                          Delete post
+                          Submit Comment
                         </button>
                       </Link>
-                      
-                    )}
-                     </div>
+                    </div>
+
+                    <div className='delete-post'>
+                      {post.userId === props.loggedInUser._id && (
+                        <Link to='/posts'>
+                          <button
+                            className='button is-danger is-inverted'
+                            name={post._id}
+                            onClick={deletePost}
+                          >
+                            Delete post
+                          </button>
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

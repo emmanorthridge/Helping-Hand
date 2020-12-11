@@ -3,19 +3,19 @@ import React from 'react';
 const About = () => {
   return (
     <section className='hero is-white is-fullheight '>
-        <div className='column'>
-          <body>
-            <section class='section'>
-              <div class='container'>
-                <div className = 'about-title'>
+      <div className='column'>
+        <body>
+          <section class='section'>
+            <div class='container'>
+              <div className='about-title'>
                 <img
                   src='/about.png'
                   alt='alternative'
                   width={150}
                   height={150}
                 />
-                </div>
-                <div className = 'about-details'>
+              </div>
+              <div className='about-details'>
                 <h2 class='subtitle'>
                   Helping hand is the{' '}
                   <strong>Online Volunteering Community.</strong> Inspired by
@@ -35,10 +35,10 @@ const About = () => {
                   needing some help by commenting on the posts.
                 </h2>
               </div>
-              </div>
-            </section>
-          </body>
-        </div>
+            </div>
+          </section>
+        </body>
+      </div>
     </section>
   );
 };

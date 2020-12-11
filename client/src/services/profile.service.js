@@ -6,7 +6,6 @@ class ProfileService {
       baseURL: 'http://localhost:5000/api',
       withCredentials: true,
     });
-
   }
 
   getServiceProfile = (userId) => {
@@ -14,10 +13,10 @@ class ProfileService {
   };
 
   updateProfile = (userId, details) => {
-    return this.service.put(`/profile/`+ userId, details).then((response) => response);
+    return this.service
+      .put(`/profile/` + userId, details)
+      .then((response) => response);
   };
 }
 
-
 export default ProfileService;
-

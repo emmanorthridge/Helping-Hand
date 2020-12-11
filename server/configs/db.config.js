@@ -2,7 +2,7 @@
 
 // const { MONGO_ATLAS_URI, MONGO_LOCAL, NODE_ENV } = process.env;
 
-// const connectDb = (mongoUri) => 
+// const connectDb = (mongoUri) =>
 // mongoose
 //   .connect(mongoUri, {
 //     useCreateIndex: true,
@@ -19,12 +19,10 @@
 //     console.error("Error connecting to mongo", err);
 //   });
 
-// // Check if development environment is 
+// // Check if development environment is
 // NODE_ENV === "development" ? connectDb(MONGO_LOCAL) : connectDb(MONGO_ATLAS_URI);
 
-
-
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 mongoose
   .connect(process.env.MONGO_ATLAS_URI || MONGO_LOCAL, {
@@ -39,5 +37,5 @@ mongoose
     );
   })
   .catch((err) => {
-    console.error("Error connecting to mongo", err);
+    console.error('Error connecting to mongo', err);
   });

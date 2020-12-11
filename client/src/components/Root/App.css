@@ -1,4 +1,3 @@
-
 .App {
   text-align: center;
 }
@@ -70,17 +69,16 @@
   padding-top: 40px;
 }
 
-
 .need-help-post {
   margin-left: 350px;
 
   width: 50%;
   margin-bottom: 25px;
   padding-bottom: 10px;
- padding-left: 30px;
- padding-right: 30px;
- padding-top: 10px;
- background-color: #FECFD8;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  background-color: #fecfd8;
 }
 
 .volunteer-post {
@@ -94,7 +92,7 @@
   padding-right: 30px;
   padding-top: 10px;
   /* color: #99ECDF; */
-  background-color: #CBF5EE;
+  background-color: #cbf5ee;
 }
 
 .homepage-title {
@@ -102,17 +100,15 @@
 }
 
 .about-title {
- padding-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .form {
-   
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    }
-
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
 
 .field h2 {
   padding-bottom: 20px;
@@ -129,9 +125,7 @@
 }
 
 .signup-form {
-
-  background-color: #13D1B2;
- 
+  background-color: #13d1b2;
 }
 
 .profile-page {
@@ -171,8 +165,6 @@
   column-gap: 20px;
   align-items: row;
   padding-left: 170px;
-  
-  
 }
 
 .comment-box {
@@ -182,14 +174,12 @@
 .post-text {
   padding-top: 10px;
   text-align: left;
-
 }
 
 .submit-comment {
   padding-bottom: 20px;
 }
 
-
 .submit-edit {
-margin-top: 10px;
+  margin-top: 10px;
 }

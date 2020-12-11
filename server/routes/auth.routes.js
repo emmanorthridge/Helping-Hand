@@ -6,12 +6,14 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user.model');
 
 router.post('/signup', (req, res) => {
-  const { username, password, email, type} = req.body;
+  const { username, password, email, type } = req.body;
 
-  console.log("FROM REACT", username, password, email);
-  
+  console.log('FROM REACT', username, password, email);
+
   if (!username || !password || !email) {
-    res.status(400).json({ message: 'Please provide username, email and password' });
+    res
+      .status(400)
+      .json({ message: 'Please provide username, email and password' });
     return;
   }
 
@@ -41,9 +43,9 @@ router.post('/signup', (req, res) => {
     const aNewUser = new User({
       username: username,
       email: email,
-      type: "volunteer",
+      type: 'volunteer',
       password: hashPass,
-      imageUrl: "/profile pic.png"
+      imageUrl: '/profile pic.png',
     });
 
     aNewUser.save((err) => {
