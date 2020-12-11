@@ -43,6 +43,7 @@ router.post('/signup', (req, res) => {
       email: email,
       type: "volunteer",
       password: hashPass,
+      imageUrl: "/profile pic.png"
     });
 
     aNewUser.save((err) => {

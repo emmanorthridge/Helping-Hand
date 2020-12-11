@@ -65,29 +65,30 @@ const EditProfile = (props) => {
 
   return (
     <div>
-      <div>
+      <div className='field'>
         <div>Username: {profileDetails.username}</div>
         <div>Email: {profileDetails.email}</div>
       </div>
+      <div className='form'>
       <form onSubmit={handleFormSubmit}>
-        <label htmlFor='imageUrl'>Upload profile picture:</label>
+        <label className='label'htmlFor='imageUrl'>Upload profile picture:</label>
         <input type='file' name='imageUrl' onChange={handleFileUpload} />
-        <label>Description:</label>
-        <input
+        <label className='label'>Description:</label>
+        <input className='input is-primary'
           value={detailsToUpdate.description}
           type='text'
           name='description'
           onChange={handleChange}
         />
-        <label>Location:</label>
-        <input
+        <label className='label' >Location:</label>
+        <input className='input is-primary'
           value={detailsToUpdate.location}
           type='text'
           name='location'
           onChange={handleChange}
         />
 
-        <label>I am:</label>
+        <label className='label'>I am:</label>
         <select name='type' onChange={handleChange}>
           <option
             selected={profileDetails.type === 'volunteer'}
@@ -102,16 +103,21 @@ const EditProfile = (props) => {
             Find Help
           </option>
         </select>
-      </form>
-      {detailsToUpdate.imageUrl ? (
+
+        <div>
+        {detailsToUpdate.imageUrl ? (
         <Link to='/'>
-          <button onClick={handleFormSubmit}>Submit</button>
+          <button className = "submit-edit" onClick={handleFormSubmit}>Submit</button>
         </Link>
       ) : (
         <button disabled type='submit'>
           Submit
         </button>
       )}
+       </div>
+
+      </form>
+    </div>
     </div>
   );
 };

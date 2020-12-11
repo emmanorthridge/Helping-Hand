@@ -29,6 +29,9 @@ const Navbar = (props) => {
         <Link to="/">
           <img src='/superman.png' alt='alternative' width={50} height={20} />
           </Link>
+          <Link to="/">
+        <img src='/handnav2.png' alt='alternative' width={100} height={200} />
+        </Link>
         </div>
         <div className='about'>
           <Link

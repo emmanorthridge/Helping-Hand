@@ -73,17 +73,28 @@
 
 .need-help-post {
   margin-left: 350px;
-  color: red;
-  border-style: double;
-  width: 50%;
 
+  width: 50%;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+ padding-left: 30px;
+ padding-right: 30px;
+ padding-top: 10px;
+ background-color: #FECFD8;
 }
 
 .volunteer-post {
   margin-left: 350px;
-  color: green;
-  border-style: double;
+  /* color: green; */
+
   width: 50%;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  /* color: #99ECDF; */
+  background-color: #CBF5EE;
 }
 
 .homepage-title {
@@ -123,3 +134,62 @@
  
 }
 
+.profile-page {
+  padding-top: 70px;
+}
+
+.profile-info {
+  text-align: left;
+}
+
+/* .profile {
+  border-radius: 15px 50px 30px 5px;
+  background-color: lightblue;
+} */
+
+.profileupdate {
+  padding-top: 30px;
+}
+
+.post-button {
+  padding-top: 10px;
+}
+
+.post-list {
+  padding-top: 30px;
+  margin-bottom: 50px;
+}
+
+.post-title {
+  padding-top: 30px;
+}
+
+.comment-buttons {
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  column-gap: 20px;
+  align-items: row;
+  padding-left: 170px;
+  
+  
+}
+
+.comment-box {
+  padding-top: 10px;
+}
+
+.post-text {
+  padding-top: 10px;
+  text-align: left;
+
+}
+
+.submit-comment {
+  padding-bottom: 20px;
+}
+
+
+.submit-edit {
+margin-top: 10px;
+}

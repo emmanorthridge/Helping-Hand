@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-
 import PostService from '../../services/post.service';
 
 const PostList = (props) => {
@@ -91,10 +90,12 @@ const PostList = (props) => {
 
   return (
     <div>
-      <h2>POST FEED</h2>
+      <div className='post-title'>
+        <img src='/posts.png' alt='alternative' width={150} height={150} />
+      </div>
       <div>
         <form onSubmit={handlePostFormSubmit}>
-          <label>Write a post </label>
+          <label>Add a post </label>
           <input
             type='text'
             value={postToSave.text}
@@ -102,73 +103,117 @@ const PostList = (props) => {
             onChange={handleChange}
           />
         </form>
-        <Link to='/'>
-          <button onClick={handlePostFormSubmit}>Post</button>
-        </Link>
-        {listOfPosts.map((post) => {
-          return (
-            <div key={post._id}>
-              <div
-                className={
-                  post.type === 'volunteer'
-                    ? 'volunteer-post'
-                    : 'need-help-post'
-                }
-              >
-                <p>
-                  Post By:{' '}
-                  <Link to={`/profile/${post.userId}`}> {post.username}</Link>
-                </p>
+        <div className='post-button'>
+          <Link to='/'>
+            <button
+              className='button is-primary'
+              onClick={handlePostFormSubmit}
+            >
+              Submit
+            </button>
+          </Link>
+        </div>
+        <div className='post-list'>
+          {listOfPosts.map((post) => {
+            return (
+              <div key={post._id}>
+                <div
+                  className={
+                    post.type === 'volunteer'
+                      ? 'volunteer-post'
+                      : 'need-help-post'
+                  }
+                >
+                   <div className='post-text'>
+                    <h3>
+                      <strong>Type:</strong>{' '}
+                      {post.type === 'volunteer'
+                        ? 'Volunteer'
+                        : 'Help needed'}
+                    </h3>
+                  </div>
+                  <div className='post-text'>
+                    <p>
+                      <strong>User: </strong>
+                      <Link to={`/profile/${post.userId}`}>
+                        {' '}
+                        {post.username}
+                      </Link>
+                    </p>
+                  </div>
 
-                <h3>Post: {post.text}</h3>
-                <h3>
-                  Posted by someone who is:{' '}
-                  {post.type === 'volunteer'
-                    ? 'a volunteer'
-                    : 'looking for help'}
-                </h3>
-                <h3>Post At: {post.date}</h3>
-                <div>
-                  {post.comments.map((comment) => {
-                    return (
-                      <div>
-                        <div> Comment: {comment.text}</div>
-                        Comment By:{' '}
-                        <Link to={`/profile/${comment.user}`}>
-                          {' '}
-                          {comment.username}
-                        </Link>
-                        <div> Comment At: {comment.date}</div>
-                      </div>
-                    );
-                  })}
+                  <div className='post-text'>
+                    <h3>
+                      <strong>Post:</strong> {post.text}
+                    </h3>
+                  </div>
+
+                
+
+                  <div className='post-text'>
+                    <h3>
+                      <strong>Added:</strong> {post.date}
+                    </h3>
+                    
+                    {post.comments.map((comment) => {
+                      return (
+                        <div>
+                          <div> Comment: {comment.text}</div>
+                          Comment By:{' '}
+                          <Link to={`/profile/${comment.user}`}>
+                            {' '}
+                            {comment.username}
+                          </Link>
+                          <div> Comment At: {comment.date}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className='comment-box'>
+                    <form onSubmit={handleCommentFormSubmit}>
+                      <label>Leave A Comment</label>
+                      <input
+                        type='text'
+                        value={commentToSave.comment}
+                        name={post._id}
+                        onChange={handleCommentChange}
+                      />
+                    </form>
+                  </div>
+
+                  <div className='comment-buttons'>
+                    <div className = 'submit-comment'>
+                    <Link to='/'>
+                      <button
+                        className='button is-primary is-inverted'
+                        onClick={handleCommentFormSubmit}
+                      >
+                        Submit Comment
+                      </button>
+                    </Link>
+                    </div>
+
+                    <div className = 'delete-post'>
+
+                    {post.userId === props.loggedInUser._id && (
+                      <Link to='/posts'>
+                        <button
+                          className='button is-danger is-inverted'
+                          name={post._id}
+                          onClick={deletePost}
+                        >
+                          Delete post
+                        </button>
+                      </Link>
+                      
+                    )}
+                     </div>
+                  </div>
                 </div>
-                <form onSubmit={handleCommentFormSubmit}>
-                  <label>Leave A Comment</label>
-                  <input
-                    type='text'
-                    value={commentToSave.comment}
-                    name={post._id}
-                    onChange={handleCommentChange}
-                  />
-                </form>
-                <Link to='/'>
-                  <button onClick={handleCommentFormSubmit}>
-                    Submit Comment
-                  </button>
-                </Link>
-
-                {post.userId === props.loggedInUser._id && (
-                  <Link to='/posts'>
-                    <button name={post._id} onClick={deletePost}>
-                      Delete post
-                    </button>
-                  </Link>
-                )}
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
