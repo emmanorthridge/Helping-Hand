@@ -25,9 +25,10 @@ const EditProfile = (props) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    const service = new ProfileService();
 
-    axios
-      .put(`http://localhost:5000/api/profile/${_id}`, { detailsToUpdate })
+    service
+      .updateProfile(_id, { detailsToUpdate })
       .then((response) => {
         props.getUser(response.data);
         props.history.push(`/profile/${_id}`);
