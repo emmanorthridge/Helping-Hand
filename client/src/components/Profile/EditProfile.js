@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+
 
 import UploadService from '../../services/upload.service';
 import ProfileService from '../../services/profile.service';
@@ -68,7 +68,6 @@ const EditProfile = (props) => {
     <div>
       <div className='field'>
         <div>Username: {profileDetails.username}</div>
-        <div>Email: {profileDetails.email}</div>
       </div>
       <div className='form'>
         <form onSubmit={handleFormSubmit}>

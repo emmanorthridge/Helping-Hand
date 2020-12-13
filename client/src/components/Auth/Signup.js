@@ -13,10 +13,10 @@ const Signup = (props) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const { username, password, email } = regForm;
+    const { username, password} = regForm;
 
     service
-      .signup(username, password, email)
+      .signup(username, password)
       .then((response) => {
         setRegForm(initialState);
         props.getUser(response);
@@ -45,14 +45,7 @@ const Signup = (props) => {
 
         <div className='form'>
           <form onSubmit={handleFormSubmit}>
-            <label className='label'>Email:</label>
-            <input
-              className='input is-primary'
-              type='text'
-              name='email'
-              value={regForm.email}
-              onChange={handleChange}
-            />
+    
             <label className='label'>Username:</label>
             <input
               className='input is-primary'
