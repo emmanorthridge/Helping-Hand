@@ -14,3 +14,8 @@ How to run this code:
   * cd server
   * npm run concurrently
   * Open localhost:3000 in the browser
+
+
+  Future developments: 
+
+  * Install a chatbox API so users can communicate directly  
