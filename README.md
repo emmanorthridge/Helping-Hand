@@ -8,9 +8,9 @@ Helping hand is the Online Volunteering Community. Inspired by the events of 202
 How to run this code:
 
 * Install MongoDB 
-* Clone this repository. 
-* Run npm install in both Client and Server folders
+* Clone this repository
+* Run npm install in both Client and Server folders (to install dependencies)
  * To run the application:
- cd server
- npm run concurrently
- Open localhost:3000 in the browser
+  * cd server
+  * npm run concurrently
+  * Open localhost:3000 in the browser
