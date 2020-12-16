@@ -10,6 +10,7 @@ const cors = require('cors');
 const passport = require('passport');
 const session = require('express-session');
 
+
 require('./configs/db.config');
 
 require('./configs/passport.config');
@@ -52,16 +53,16 @@ app.use('/api', require('./routes/fileUpload.routes'));
 app.use('/api', require('./routes/profile.routes'));
 
 //Setting up environments
-if (process.env.NODE_ENV === "production") {
-  // set ability to get static values from client build folder
-  // static files include all javascript and css files
-  app.use(express.static("client/build"));
+// if (process.env.NODE_ENV === "production") {
+//   // set ability to get static values from client build folder
+//   // static files include all javascript and css files
+//   app.use(express.static("client/build"));
 
-  // get the index.html that will be rendered on the browser
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "../client", "build", "index.html"));
-  });
-}
+//   // get the index.html that will be rendered on the browser
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname + "../client", "build", "index.html"));
+//   });
+// }
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
