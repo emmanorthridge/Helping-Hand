@@ -25,8 +25,8 @@ const Signup = (props) => {
       })
       .catch((error) => {
         console.log(error.response.data)
-        // const { message } = error.response.data;
-        // setRegErrorMsg(message);
+        const { message } = error.response.data;
+        setRegErrorMsg(message);
       });
   };
 
