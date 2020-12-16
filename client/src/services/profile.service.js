@@ -3,7 +3,7 @@ import axios from 'axios';
 class ProfileService {
   constructor() {
     this.service = axios.create({
-      baseURL: 'http://localhost:5000/api',
+      baseURL: 'https://helping-app.herokuapp.com/api',
       withCredentials: true,
     });
   }
