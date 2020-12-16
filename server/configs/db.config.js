@@ -19,8 +19,8 @@ mongoose
     console.error("Error connecting to mongo", err);
   });
 
-// // Check if development environment is
-// NODE_ENV === "development" ? connectDb(MONGO_LOCAL) : connectDb(MONGO_ATLAS_URI);
+// Check if development environment is
+NODE_ENV === "development" ? connectDb(MONGO_LOCAL) : connectDb(MONGO_ATLAS_URI);
 
 // const mongoose = require('mongoose');
 

@@ -24,8 +24,9 @@ const Signup = (props) => {
         props.history.push(`/profile/${response._id}`);
       })
       .catch((error) => {
-        const { message } = error.response.data;
-        setRegErrorMsg(message);
+        console.log(error.response.data)
+        // const { message } = error.response.data;
+        // setRegErrorMsg(message);
       });
   };
 
