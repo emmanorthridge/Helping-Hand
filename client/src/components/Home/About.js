@@ -5,8 +5,8 @@ const About = () => {
     <section className='hero is-white is-fullheight '>
       <div className='column'>
         <body>
-          <section class='section'>
-            <div class='container'>
+          <section className='section'>
+            <div className='container'>
               <div className='about-title'>
                 <img
                   src='/about.png'
@@ -16,13 +16,13 @@ const About = () => {
                 />
               </div>
               <div className='about-details'>
-                <h2 class='subtitle'>
+                <h2 className='subtitle'>
                   Helping hand is the{' '}
                   <strong>Online Volunteering Community.</strong> Inspired by
                   the events of 2020, our aim is to connect those who have a
                   little extra time with those who need it.
                 </h2>
-                <h2 class='subtitle'>
+                <h2 className='subtitle'>
                   In this community, users can share their posts for assistance,
                   whether it’s dog walking, gardening, picking up groceries or
                   precriptions- all socially distanced of course! Just state
@@ -30,7 +30,7 @@ const About = () => {
                   recurring i.e. dog walking), and on what days, and then hit
                   ‘Post’.
                 </h2>
-                <h2 class='subtitle'>
+                <h2 className='subtitle'>
                   Those people with extra time can choose to connect with those
                   needing some help by commenting on the posts.
                 </h2>

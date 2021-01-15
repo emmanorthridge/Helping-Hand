@@ -22,8 +22,8 @@ const Profile = (props) => {
     <div>
       <div className='profile-page'>
         <img src='/profile.png' alt='alternative' width={300} height={300} />
-        <div class='columns is-vcentered'>
-          <div class='column is-5'>
+        <div className='columns is-vcentered'>
+          <div className='column is-5'>
             <img
               width={250}
               height={250}
@@ -32,7 +32,7 @@ const Profile = (props) => {
             />
           </div>
           <div className='profile-info'>
-            <div class='column is-8'>
+            <div className='column is-8'>
               <div className='profile'>
                 <strong>Username:</strong> {profileDetails.username}
               </div>

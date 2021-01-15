@@ -21,8 +21,8 @@ const Home = () => {
               </div>
             </div>
             </div>
-            <div class='columns is-vcentered'>
-              <div class='column is-7'>
+            <div className='columns is-vcentered'>
+              <div className='column is-7'>
                 <img
                   src='/superman.png'
                   alt='alternative'
@@ -32,7 +32,7 @@ const Home = () => {
               </div>
 
 
-              <div class='column is-3'>
+              <div className='column is-3'>
                 <div className='quote'>
                   <p>
                     Inspired by the events of 2020, we connect those who have a
